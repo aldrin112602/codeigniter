@@ -34,24 +34,27 @@
         outline: none;
     }
 
+    body::-webkit-scrollbar {
+        width: 0;
+    }
+
     html,
     body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
+        
     }
 
     body {
         min-height: 100vh;
+        background-image: linear-gradient(26deg, #e0e4f2 0%, #f0f1ff 46%, #ffffff 100%);
     }
     </style>
 
 </head>
 
-<body style="
-        background-color: #e0e4f2;
-        background-image: linear-gradient(26deg, #e0e4f2 0%, #f0f1ff 46%, #ffffff 100%);
-    ">
+<body>
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow" style="
@@ -82,7 +85,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <div class="" style="position: relative;">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control-lg form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <span class="material-symbols-outlined text-secondary position-absolute" style="
                             top: 50%;
                             right: 12px;
@@ -113,7 +116,9 @@
                         data-bs-toggle="modal" data-bs-target="#Signup_form"
                         >Signup now</button>
                     <button class="btn shadow btn-light border btn-lg" style="width: 200px"
-                        type="button">Sign-In</button>
+                        type="button"
+                        data-bs-toggle="modal" data-bs-target="#Signin_form"
+                        >Sign-In</button>
                 </div>
             </div>
             <div class="col-12 col-md-7 d-flex align-items-center justify-content-center my-4">
@@ -122,27 +127,77 @@
             </div>
         </div>
     </section>
+
+
+
     <!-- SIGNUP MODAL -->
     <!-- Modal -->
-    <div class="modal fade" id="Signup_form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <form action="javascript:void(0)" method="POST" class="modal fade modal-lg" id="Signup_form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Create an Account</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header px-4 py-3">
+                    <h1 class="modal-title fs-4" id="staticBackdropLabel">Create an Account</h1>
+                    <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                   
+                <div class="modal-body px-5 py-3">
+                    <div class="row my-2">
+                        <div class="col">
+                            <label class="form-label fs-5">First name</label>
+                            <input required type="text" class="form-control form-control-lg" name="first_name">
+                        </div>
+                        <div class="col">
+                            <label class="form-label fs-5">Last name</label>
+                            <input required type="text" class="form-control-lg form-control" name="last_name">
+                        </div>
+                    </div>
+                    <label class="form-label fs-5 mt-2">Email-adddress</label>
+                    <input required type="email" class="form-control-lg form-control" name="email">
+                    <label class="form-label fs-5 mt-2">Username</label>
+                    <input required type="text" class="form-control-lg form-control" name="username">
+                    <label class="form-label fs-5 mt-2">Password</label>
+                    <input required type="password" class="form-control-lg form-control" name="password">
+                    <label class="form-label fs-5 mt-2">Confirm Password</label>
+                    <input required type="password" class="form-control-lg form-control" name="confirm_password">
+                    <label class="form-label fs-5 mt-2">Profile</label>
+                    <input accept="image/*" required type="file" class="form-control-lg form-control" name="profile">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Continue</button>
+                <div class="modal-footer px-5 py-3">
+                    <button type="reset" class="btn btn-danger btn-lg px-4" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-lg px-4">Continue</button>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <!-- SIGNUP MODAL -->
+
+
+    <!-- SIGN-IN MODAL -->
+    <!-- Modal -->
+    <form action="javascript:void(0)" method="POST" class="modal fade modal-lg" id="Signin_form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header px-4 py-3">
+                    <h1 class="modal-title fs-4" id="staticBackdropLabel">Sign-in your Account</h1>
+                    <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-5 py-3">
+                    <label class="form-label fs-5 mt-2">Username</label>
+                    <input required type="text" class="form-control-lg form-control" name="username">
+                    <label class="form-label fs-5 mt-2">Password</label>
+                    <input required type="password" class="form-control-lg form-control" name="password">
+                </div>
+                <div class="modal-footer px-5 py-3">
+                    <button type="reset" class="btn btn-danger btn-lg px-4" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-lg px-4">Continue</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- SIGN-IN MODAL -->
+
+
     <footer class="p-4 text-center border-top border-2" style="background-color: rgba(100, 200, 255, 0.1)">
         &copy; <?= date('Y') ?> ChatIgniter - All rights reserved<br><a class="nav-link d-inline-block" href="#">Privacy
             Policy</a> | <a class="nav-link d-inline-block" href="#">Terms of Service</a> | <a
