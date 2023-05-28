@@ -16,10 +16,10 @@
                         <a class="nav-link" href="./">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./Services">Services</a>
+                        <a class="nav-link active" aria-current="page" href="./Services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./About">About</a>
+                        <a class="nav-link"href="./About">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Github</a>
