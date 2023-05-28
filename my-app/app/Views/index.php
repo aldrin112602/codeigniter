@@ -109,7 +109,9 @@
                 <div class="d-flex align-items-center justify-content-center gap-4">
                     <button class="btn shadow border btn-lg text-white fw-semi-bold"
                         style="width: 200px; background-color: #4158D0; background-image: linear-gradient(225deg, #4158D0 0%, #5055c8 46%, #7076ff 100%);"
-                        type="button">Signup now</button>
+                        type="button"
+                        data-bs-toggle="modal" data-bs-target="#Signup_form"
+                        >Signup now</button>
                     <button class="btn shadow btn-light border btn-lg" style="width: 200px"
                         type="button">Sign-In</button>
                 </div>
@@ -121,26 +123,21 @@
         </div>
     </section>
     <!-- SIGNUP MODAL -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Launch static backdrop modal
-    </button>
-
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="Signup_form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Create an Account</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                   
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Continue</button>
                 </div>
             </div>
         </div>
